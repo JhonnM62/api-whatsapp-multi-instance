@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <title>Subir Archivos</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo-container">
+        <img src="/images/logo.png" alt="Logo" />
+      </div>
+      <h1>SUBE TU ARCHIVO</h1>
+      <h6>Soportado: imagenes/pdf/audios/archivos en otro formato</h6>
+      <div class="error-message" style="color: red;"></div>
+      <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept="*/*" />
+        <button type="submit">Subir</button>
+      </form>
+
+      <div class="image-path-container">
+        <% if (imagePath) { %>
+          <p class="image-path-text">
+            <span id="copyIcon" style="cursor: pointer;">
+              <img src="https://cdn-icons-png.flaticon.com/512/190/190244.png" alt="Copy Icon" />
+            </span>
+            <%= imagePath %>
+          </p>
+        <% } %>
+      </div>
+      <script>
+
+function validateForm(event) {
+          const selectedFile = document.querySelector('input[type="file"]').files[0];
+          const errorMessage = document.querySelector('.error-message');
+
+          if (!selectedFile) {
+            errorMessage.textContent = 'Por favor, selecciona un archivo antes de subirlo.';
+            event.preventDefault(); // Evitar el envío del formulario
+          } else {
+            errorMessage.textContent = ''; // Limpiar mensaje de error si hay un archivo seleccionado
+          }
+        }
+
+        // Agregar un evento de clic al botón de Subir
+        const submitButton = document.querySelector('button[type="submit"]');
+        submitButton.addEventListener('click', validateForm);
+
+        // Eliminar el mensaje de error tan pronto como se seleccione un archivo
+        const fileInput = document.querySelector('input[type="file"]');
+        fileInput.addEventListener('change', function () {
+          const errorMessage = document.querySelector('.error-message');
+          errorMessage.textContent = ''; // Limpiar el mensaje de error
+        });
+
+        function copyImagePathToClipboard() {
+          const fullPath = "<%= imagePath %>";
+          const startIndex = fullPath.indexOf(".");
+          if (startIndex !== -1) {
+            const partialPath = fullPath.substring(startIndex);
+
+            navigator.clipboard.writeText(partialPath)
+              .then(() => {
+                alert("Ruta de imagen copiada al portapapeles: " + partialPath);
+                window.location.href = "/"; // Redirigir al index
+              })
+              .catch(err => {
+                console.error("Error al copiar al portapapeles:", err);
+              });
+          }
+        }
+
+        // Agregar evento de clic al ícono de copia
+        const copyIcon = document.getElementById("copyIcon");
+        copyIcon.addEventListener("click", copyImagePathToClipboard);
+      </script>
+      
+  </body>
+</html>

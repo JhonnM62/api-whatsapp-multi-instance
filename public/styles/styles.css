@@ -1,0 +1,198 @@
+/* Estilos generales para todos los dispositivos */
+/* Estilos generales para todos los dispositivos */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-image: url("./background.webp"); /* Cambia 'ruta/a/imagen/fondo.webp' a la ubicación real de tu imagen WebP */
+  background-size: cover; /* Esto ajustará la imagen para que cubra todo el fondo */
+  background-repeat: no-repeat; /* Esto evitará que la imagen se repita */
+  background-color: #000000; /* Color de fondo de respaldo en caso de que la imagen no se cargue */
+  background-position: center center; /* Esto centrará la imagen en el fondo */
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  text-align: center;
+  background-color: #131e2a;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h6 {
+  color: rgb(255, 255, 255);
+}
+
+form {
+  margin-top: 20px;
+}
+
+input[type="file"] {
+  display: block;
+  margin: 10px auto;
+  color: #f4f4f4;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo-container img {
+  max-width: 200px;
+  height: auto;
+}
+
+.image-path-container {
+  color: rgb(255, 255, 255);
+  margin-top: 10px;
+}
+
+#copyIcon img {
+  width: 24px; /* Ancho deseado en píxeles */
+  height: 24px; /* Altura deseada en píxeles */
+  margin-right: 5px; /* Espacio entre la imagen y el texto */
+  vertical-align: middle; /* Alineación vertical en el centro */
+}
+
+#copyButton {
+  cursor: pointer;
+}
+
+/* Estilos para el contenedor de la caja de inicio de sesión */
+
+/* Estilos para dispositivos móviles (ancho máximo de 768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px; /* Ajusta el espacio interior en dispositivos móviles */
+  }
+
+  .logo-container img {
+    max-width: 150px;
+  }
+}
+
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.login-container {
+  width: 300px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #131e2a; /* Fondo del formulario */
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-title {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.login-label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #fff; /* Texto de las etiquetas en color blanco */
+}
+
+.login-input {
+  width: 90%;
+  padding: 7px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #fff;
+  color: #333;
+  margin-left: auto; /* Centra horizontalmente */
+  margin-right: auto; /* Centra horizontalmente */
+}
+
+.login-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+.register-container {
+  width: 300px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #131e2a;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Centra el contenido horizontalmente */
+}
+
+.register-title {
+  font-size: 24px;
+  margin-top: 0;
+  color: #fff;
+}
+
+.register-label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.register-input {
+  width: 90%;
+  padding: 7px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #fff;
+  color: #333;
+  margin-left: auto; /* Centra horizontalmente */
+  margin-right: auto; /* Centra horizontalmente */
+}
+
+.register-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.register-button:hover {
+  background-color: #0056b3;
+}

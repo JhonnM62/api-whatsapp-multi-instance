@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="logo-container">
+        <img src="/images/logo.png" alt="Logo" />
+      </div>
+      <h1 class="login-title">Inicie Sesion</h1>
+      <form action="/login" method="POST" class="login-form">
+        <label for="username" class="login-label">Username</label>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          class="login-input"
+          required
+        />
+        <label for="password" class="login-label">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          class="login-input"
+          required
+        />
+        <button type="submit" class="login-button">Login</button>
+      </form>
+    </div>
+  </body>
+</html>
