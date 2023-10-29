@@ -80,7 +80,7 @@ const createBotSession = async (BOTNAME) => {
     });
     const upload = multer({ storage: storage });
     app.use(express.static(path.join(__dirname, "public")));
-
+    console.log(path.join(__dirname, "public"));
     // Configuración de la vista EJS
     app.set("view engine", "ejs");
     app.set("views", path.join(__dirname, "views"));
@@ -179,9 +179,9 @@ const createBotSession = async (BOTNAME) => {
             await fs.unlink(imagePath);
             const rutaCorregida = "./" + convertedAudioPath.replace(/\\/g, "/");
             // Pasa la ruta del archivo de audio convertido a la vista
-            res.render("index", { imagePath: rutaCorregida });
+            res.status(200).json({ rutaCorregida }); // Responde con la ruta de la imagen subida
           } else {
-            res.render("index", { imagePath }); // Pasa imagePath a la vista
+            res.status(200).json({ imagePath }); // Responde con la ruta de la imagen subida
           }
         } catch (error) {
           console.error("Error:", error);
